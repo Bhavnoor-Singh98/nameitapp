@@ -1,0 +1,104 @@
+package.json{ 
+    This file tells us the structure and all about the project
+    Information about Project
+    }
+
+
+ Everything we do in 'src folder'.
+
+ index.html= used for 'title' and for any fonts or so.
+
+ Our entry point for project is 'index.js' file.
+
+ # ReactDOM is a library that provides 'render' method which expects(1,2) where:
+    1= React Component
+    2= HTML selector where we are going to render this Component.
+
+ # JSX is not understood by browser and to convert(transcript) JSX into normal JS we use 'create react app'
+    If we do it manually ie not using 'create react app' then we need babel for that.        
+
+# using React.Component in classes we can use all the features provided by react.   
+
+# Inside Component folder we have sub folder App having 
+         1. App.jsx and 2. App.css
+
+$$$$$$  IMPORTANT $$$$$$
+Only one export is allowed per module
+
+$$$$$$$$$$$$
+      
+ @@@ functional component
+            function App(){
+               return <h1>This is my Functional Component!</h1>
+               }
+
+@@@  class based component
+         class App extends React.Component{
+            render(){
+            return <h1>This is my Class Component!</h1>
+            }
+         }            
+
+## React uses Javascript object to implement state
+   state is used when we know that this thing(data) would change with time.  
+
+   To implement state use 'state' keyword nothing else
+    class App extends React.Component{
+       state={
+          ReaderText='This is a cool app'
+       };
+            render(){
+            return (
+               <h1>This is my Class Component!</h1>
+               <h3>{this.state.ReaderText}</h3>
+               )
+
+            }
+         }
+
+## Props are used to pass Data from parent component to child component
+   const Header= (props) =>{
+    return(
+        <div className="head-container">
+            <img src="https://user-images.githubusercontent.com/26179770/106359099-693e3380-6336-11eb-8069-9e36f25de5ca.png" className="head-image" alt="Header Image" srcet=""/>
+            <h1 className="head-text">{props.headTitle}</h1>
+        </div>
+    );
+};
+export default Header;
+
+instead of props we directly wrote const Header= ({headTitle}) =>{  
+this is called destructuring  
+   no need of keyword props.
+   ##  see code (Header.jsx)
+
+@@@@     when classname used  within ``. it is called template literals.
+template literals allow us to inject our variables into string.
+
+In this project we have used template literals for applying condition using ternary operator on image size.
+see Header.jsx 
+
+
+###### for name library
+   "@rstacruz/startup-name-generator": "0.3.0",
+   see package.json
+
+############## 
+   <div>{suggestedNames.length > 0 && suggestedNames[0] }</div>
+   in JS, it will first check the condition {suggestedNames.length > 0} and if true then executes suggestedNames[0].
+   Hence, displays the output.
+   if false, it wont go to the next expression
+
+############
+      flex-direction: row; is by default 
+
+@@@###
+   when returning values using map() each value should have unique key.
+    
+@@@@ 
+homepage in package.json can have 3 values
+1. https
+2. username
+3. repo name
+
+
